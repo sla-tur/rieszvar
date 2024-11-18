@@ -1,0 +1,11 @@
+Package: rieszvar
+Type: Package
+Title: R implementation of Riesz estimators
+Version: 1.0.0
+Author: Slawomir Tur
+Maintainer: Slawomir Tur <sla.tur1999@gmail.com>
+Description: Estimates continuous piecewise linear functions as per Aliprantis, Harris, and Tourky (2006) and Ovchinnikov (2002)
+License: MIT
+Imports: stats
+LinkingTo: Rcpp
+URL: https://github.com/sla-tur/rieszvar

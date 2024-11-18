@@ -1,0 +1,3 @@
+useDynLib(rieszvar)
+export(generate_sperner_families)
+export(rieszvar_i)
