@@ -46,35 +46,35 @@ SEXP bitmask_to_elements(unsigned int bitmask, int n) {
 SEXP generate_sperner_families(SEXP r_n, SEXP r_k) {
   int n = asInteger(r_n); // Number of elements in the set
   int k = asInteger(r_k); // Maximum size of the union of subsets in the Sperner family
-  
+
   if (n > MAX_ELEMENTS) {
     error("The number of elements cannot exceed %d", MAX_ELEMENTS);
   }
-  
+
   unsigned int *subsets = malloc((1u << n) * sizeof(unsigned int)); // Array to store subsets as bitmasks
   int subset_count = 0;
-  
+
   // Generate all subsets as bitmasks, but limit the size to subsets with <= k elements
   for (unsigned int i = 1; i < (1u << n); i++) {
     if (count_set_bits(i) <= k) {
       subsets[subset_count++] = i; // Store only subsets with <= k elements
     }
   }
-  
+
   // Pre-allocate an R list to store the results (Sperner families)
   int initial_capacity = 100;
   SEXP result_list = PROTECT(allocVector(VECSXP, initial_capacity));
   int result_list_size = 0;
-  
+
   // Allocate memory for family to avoid reallocating inside parallel loop
   unsigned int *family = malloc(subset_count * sizeof(unsigned int));
-  
+
   // Parallelize the iteration through all combinations of subsets using OpenMP
 #pragma omp parallel for schedule(dynamic)
   for (int i = 1; i < (1u << subset_count); i++) {
     int family_size = 0;
     unsigned int union_set = 0;
-    
+
     // Construct the current family from the binary representation of i
     for (int j = 0; j < subset_count; j++) {
       if (i & (1u << j)) {
@@ -82,7 +82,7 @@ SEXP generate_sperner_families(SEXP r_n, SEXP r_k) {
         union_set |= subsets[j]; // Bitwise union of all subsets in the family
       }
     }
-    
+
     // Check if the union of the family has <= k elements
     if (count_set_bits(union_set) <= k && is_antichain(family, family_size)) {
       // Protecting shared resources
@@ -93,7 +93,7 @@ SEXP generate_sperner_families(SEXP r_n, SEXP r_k) {
   for (int j = 0; j < family_size; j++) {
     SET_VECTOR_ELT(family_list, j, bitmask_to_elements(family[j], n));
   }
-  
+
   // Add the family list to the result list
   if (result_list_size >= initial_capacity) {
     initial_capacity *= 2;  // Double the capacity if needed
@@ -105,15 +105,15 @@ SEXP generate_sperner_families(SEXP r_n, SEXP r_k) {
 }
     }
   }
-  
+
   // Trim result_list to the correct size
   if (result_list_size < initial_capacity) {
     result_list = PROTECT(lengthgets(result_list, result_list_size));
   }
-  
+
   free(family);   // Free allocated memory for the family array
   free(subsets);  // Free allocated memory for the subsets array
-  
+
   UNPROTECT(2); // Unprotect result_list
   return result_list;
 }
@@ -124,7 +124,7 @@ static const R_CallMethodDef CallEntries[] = {
   {NULL, NULL, 0}
 };
 
-void R_init_myCcode(DllInfo *dll) {
+void R_init_rieszvar(DllInfo *dll) {
   R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
   R_useDynamicSymbols(dll, FALSE);
 }

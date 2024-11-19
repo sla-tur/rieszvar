@@ -1,0 +1,22 @@
+{
+    "args": [
+        "-IC:/PROGRA~1/R/R-43~1.2/include",
+        "-DNDEBUG",
+        "-DEIGEN_DONT_VECTORIZE",
+        "-nostdinc",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/include/c++",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/include/c++/x86_64-w64-mingw32.static.posix",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/include/c++/backward",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/include",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/../../../../include",
+        "-Ic:/rtools43/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/12.3.0/include-fixed",
+        "-include",
+        "C:/Users/slatu/Desktop/rieszvar/.Rproj.user/A200488A/compilation-database/mingw64/c-definitions.h"
+    ],
+    "pch": "",
+    "is_cpp": false,
+    "hash": "1732041763",
+    "compiler": "15564962090173649637",
+    "rversion": "4.3.2",
+    "dbversion": 4
+}

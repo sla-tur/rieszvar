@@ -1,0 +1,69 @@
+[
+    {
+        "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+        "file_last_write": 1732042317.0,
+        "definitions": [
+            {
+                "usr": "c:sperner_families_omp.c@90@macro@MAX_ELEMENTS",
+                "kind": 9,
+                "parent_name": "",
+                "name": "MAX_ELEMENTS",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 6,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:sperner_families_omp.c@F@is_antichain",
+                "kind": 6,
+                "parent_name": "",
+                "name": "is_antichain(unsigned int *, int)",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 9,
+                "column": 19,
+                "hidden": false
+            },
+            {
+                "usr": "c:sperner_families_omp.c@F@count_set_bits",
+                "kind": 6,
+                "parent_name": "",
+                "name": "count_set_bits(unsigned int)",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 22,
+                "column": 19,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@bitmask_to_elements",
+                "kind": 6,
+                "parent_name": "",
+                "name": "bitmask_to_elements(unsigned int, int)",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 32,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@generate_sperner_families",
+                "kind": 6,
+                "parent_name": "",
+                "name": "generate_sperner_families(SEXP, SEXP)",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 46,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@R_init_rieszvar",
+                "kind": 6,
+                "parent_name": "",
+                "name": "R_init_rieszvar(DllInfo *)",
+                "file": "C:/Users/slatu/Desktop/rieszvar/src/sperner_families_omp.c",
+                "line": 127,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    }
+]

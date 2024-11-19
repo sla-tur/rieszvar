@@ -1,6 +1,5 @@
 rieszvar_i <- function(y, x, k, q) {
   
-  system.file("src", "sperner_families_omp.c", package = "rieszvar")
   generate_sperner_families <- function(n, k) {
     .Call("generate_sperner_families", as.integer(n), as.integer(k))
   }
